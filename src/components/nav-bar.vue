@@ -300,7 +300,7 @@
                   </router-link>
                 </li>
                 <li>
-                  <router-link to="/details product" class="waves-effect waves-block">
+                  <router-link to="/detailsproduct" class="waves-effect waves-block">
                      جزئیات محصول 
                   </router-link>
                 </li>
@@ -314,7 +314,7 @@
                 aria-expanded="true"
                 aria-controls="collapsethree"
               >
-                <i class="menu-icon fa fa-shopping-cart"></i>
+                <i class="menu-icon fa fa-folder-open-o"></i>
                 <span> مدیریت محتوا </span>
               </a>
               <ul
@@ -333,11 +333,11 @@
                     مدیریت تگ ها 
                   </router-link>
                 </li>
-                <li>
+                <!-- <li>
                   <router-link to="/categories" class="waves-effect waves-block">
                       مدیریت دسته بندی ها
                   </router-link>
-                </li>
+                </li> -->
               </ul>
             </li>
             <li>

@@ -26,113 +26,16 @@
       <!-- start chart 1 -->
       <div class="row">
         <div class="col-lg-3 col-md-6">
-          <div class="banner-card total-card">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-shrink"></div>
-            </div>
-            <div class="card-block">
-              <div class="text-center p-t-20">
-                <h4 class="titl-chrt">مجموع فروش</h4>
-                <p class="m-0">4000</p>
-              </div>
-            </div>
-            <area-chart
-              id="banner-chart1"
-              class="chartjs-render-monitor"
-              :colors="['#ffc107', '#666']"
-              :data="{
-                '2010': 28,
-                '2011': 35,
-                '2012': 36,
-                '2013': 48,
-                '2014': 46,
-                '2015': 42,
-                '2016': 60,
-              }"
-            ></area-chart>
-          </div>
+          <bannercard :title="title1" :number="num1" :bnr="bnr1" :clr="clr1"/>
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="banner-card total-card">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-shrink"></div>
-            </div>
-            <div class="card-block">
-              <div class="text-center p-t-20">
-                <h4 class="titl-chrt">بازدیدکنندگان</h4>
-                <p class="m-0">2500</p>
-              </div>
-            </div>
-            <area-chart
-              id="banner-chart2"
-              class="chartjs-render-monitor"
-              :colors="['#17a2b8', '#666']"
-              :data="{
-                '2010': 28,
-                '2011': 35,
-                '2012': 36,
-                '2013': 48,
-                '2014': 46,
-                '2015': 42,
-                '2016': 60,
-              }"
-            ></area-chart>
-          </div>
+          <bannercard :title="title2" :number="num2" :bnr="bnr2" :clr="clr2" />
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="banner-card total-card">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-shrink"></div>
-            </div>
-            <div class="card-block">
-              <div class="text-center p-t-20">
-                <h4 class="titl-chrt">سفارشات</h4>
-                <p class="m-0">3460</p>
-              </div>
-            </div>
-            <area-chart
-              id="banner-chart3"
-              class="chartjs-render-monitor"
-              :colors="['#6610f2', '#666']"
-              :data="{
-                '2010': 28,
-                '2011': 35,
-                '2012': 36,
-                '2013': 48,
-                '2014': 46,
-                '2015': 42,
-                '2016': 60,
-              }"
-            ></area-chart>
-          </div>
+          <bannercard :title="title3" :number="num3" :bnr="bnr3" :clr="clr3" />
         </div>
         <div class="col-lg-3 col-md-6">
-          <div class="banner-card total-card">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-shrink"></div>
-            </div>
-            <div class="card-block">
-              <div class="text-center p-t-20">
-                <h4 class="titl-chrt">سود</h4>
-                <p class="m-0">3468</p>
-              </div>
-            </div>
-            <area-chart
-              id="banner-chart4"
-              class="chartjs-render-monitor"
-              :colors="['#20c997','blue']"
-              :data="{
-                '2010': 28,
-                '2011': 35,
-                '2012': 36,
-                '2013': 48,
-                '2014': 46,
-                '2015': 42,
-                '2016': 60,
-                
-              }"
-            ></area-chart>
-          </div>
+          <bannercard :title="title4" :number="num4" :bnr="bnr4" :clr="clr4" />
         </div>
       </div>
       <!-- end chart 1 -->
@@ -727,8 +630,10 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
+import bannercard from './Home/banner-card.vue'
 export default {
-  components: {},
+  components: {bannercard},
   data() {
     return {
 data : [
@@ -743,6 +648,28 @@ data : [
 ]
     };
   },
+  setup(){
+    const title1 = ref('مجموع فروش')
+    const num1 = ref('4000')
+    const bnr1 = ref('banner-chart1')
+    const clr1 = ref('#fd7e14')
+    const title2 = ref('بازدیدکنندگان')
+    const num2 = ref('2560')
+    const bnr2 = ref('banner-chart2')
+    const clr2 = ref('#17a2b8')
+    const title3 = ref('سفارشات')
+    const num3 = ref('3026')
+    const bnr3 = ref('banner-chart3')
+    const clr3 = ref('#6f42c1')
+    const title4 = ref('سود')
+    const num4 = ref('3598')
+    const bnr4 = ref('banner-chart4')
+    const clr4 = ref('#20c997')
+    return{
+      title1 , num1 , title2 , num2 , title3 , num3 , bnr1 , bnr2 , title4 ,
+      num4 , bnr4 , bnr3 , clr1 , clr2 , clr3 , clr4
+    }
+  }
 };
 </script>
 

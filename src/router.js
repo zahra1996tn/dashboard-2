@@ -12,7 +12,7 @@ import managecategory from './components/manage-category'
 const routes = [
     { path: '/', component: homedashboard },
     { path: '/product', component: storeproduct },
-    { path: '/details product', component: storedetailpro },
+    { path: '/detailsproduct', component: storedetailpro },
     { path: '/profile', component: profile },
     { path: '/chat', component: chatuser },
     { path: '/samplework', component: samplework },

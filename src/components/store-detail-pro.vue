@@ -203,26 +203,36 @@
                 >
                   <div class="product-description">
                     <h2 class="mb-5 property-pro">ویژگی ها</h2>
-                    <dl class="row mb-5">
-                      <dt class="col-sm-3">برند</dt>
-                      <dd class="col-sm-9">برند خادملو</dd>
-                      <dt class="col-sm-3">ابعاد</dt>
-                      <dd class="col-sm-9">
-                        H 32 X W 18 X D 19؛ ارتفاع صندلی 18
-                      </dd>
-                      <dt class="col-sm-3">وزن</dt>
-                      <dd class="col-sm-9">5 کیلو</dd>
-                      <dt class="col-sm-3">گارانتی</dt>
-                      <dd class="col-sm-9">24 ماه گارانتی</dd>
-                      <dt class="col-sm-3">جنس</dt>
-                      <dd class="col-sm-9">اهن</dd>
-                      <dt class="col-sm-3">ارتفاع</dt>
-                      <dd class="col-sm-9">32 اینچ</dd>
-                      <dt class="col-sm-3">عرض</dt>
-                      <dd class="col-sm-9">18 اینچ</dd>
-                      <dt class="col-sm-3">عمق</dt>
-                      <dd class="col-sm-9">19 اینچ</dd>
-                    </dl>
+                    <div class="row mb-5 col-attr">
+                      <div class="col-lg-10 justify-content-center">
+                      <table class="table table-borderless">
+                      <thead class="">
+                        <tr>
+                          <th> برند </th>
+                          <th> ابعاد </th>
+                          <th> وزن </th>
+                          <th> گارانتی </th>
+                          <th> جنس </th>
+                          <th> ارتفاع </th>
+                          <th> عرض </th>
+                          <th> عمق </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> برند خادملو </td>
+                          <td>  H 32 X W  </td>
+                          <td> 5 کیلو </td>
+                          <td> 24 ماه گارانتی </td>
+                          <td> اهن </td>
+                          <td> 32 اینچ </td>
+                          <td> 18 اینچ </td>
+                          <td> 19 اینچ </td>
+                        </tr>
+                      </tbody>
+                      </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <!-- tab pane 2 -->

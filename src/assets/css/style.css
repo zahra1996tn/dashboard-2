@@ -2693,3 +2693,34 @@
         width: 94% !important;
         position: absolute !important;
     }
+    /**** category *****/
+    
+    .categories .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: #9c27b0;
+        border: none !important;
+    }
+    
+    .categories .nav-pills .nav-link {
+        color: #555;
+        background-color: #fff;
+        border: none !important;
+    }
+    
+    .catimg {
+        transform: scale(.5) !important;
+        transition: all ease .5s !important;
+        border-radius: 25px !important;
+        opacity: .3 !important;
+    }
+    
+    .boxcatimg {
+        box-shadow: none !important;
+    }
+    /****** end category ********/
+    
+    .col-attr {
+        display: flex;
+        justify-content: center;
+    }
