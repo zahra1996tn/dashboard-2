@@ -1,5 +1,5 @@
 <template>
-  <section class="content">
+  <section class="content" id="section">
     <div class="container-fluid">
       <!-- start breadcrumb -->
       <div class="block-header">
@@ -7,13 +7,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <ul class="breadcrumb breadcrumb-style">
               <li class="breadcrumb-item">
-                <h4 class="page-title">محصولات</h4>
-              </li>
-              <li class="breadcrumb-item bcrumb-1">
-                <a href="#">
-                  <i class="fa fa-home"></i>
-                  خانه
-                </a>
+                <h4 class="page-title">چت</h4>
               </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> چت </a>
@@ -265,7 +259,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  setup(){
+   
+  }
+};
 </script>
 
 <style>

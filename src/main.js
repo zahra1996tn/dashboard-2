@@ -7,6 +7,7 @@ import Chart from 'chart.js'
 
 // import VueChartkick from 'vue-chartkick'
 // import 'chartkick/chart.js'
+
 // import Chart from 'chart.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -18,6 +19,5 @@ import 'hbootstrap4rtl/bootstrap-rtl.css'
 const app = createApp(App)
 app.use(router)
 app.use(VueChartkick.use(Chart))
-    // app.use(Chart)
     // app.use(VueChartkick)
 app.mount('#app')

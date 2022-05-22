@@ -9,12 +9,6 @@
               <li class="breadcrumb-item">
                 <h4 class="page-title">محصولات</h4>
               </li>
-              <li class="breadcrumb-item bcrumb-1">
-                <a href="#">
-                  <i class="fa fa-home"></i>
-                  خانه
-                </a>
-              </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> فروشگاه </a>
               </li>

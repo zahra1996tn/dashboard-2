@@ -8,6 +8,8 @@ import samplework from './components/sample-work'
 import manageproject from './components/manage-project'
 import managetag from './components/manage-tag'
 import managecategory from './components/manage-category'
+import manageuser from './components/Manage-user/Manage-user.vue'
+import ckedit from './components/ck-edit'
 
 const routes = [
     { path: '/', component: homedashboard },
@@ -19,6 +21,8 @@ const routes = [
     { path: '/projects', component: manageproject },
     { path: '/tags', component: managetag },
     { path: '/categories', component: managecategory },
+    { path: '/users', component: manageuser },
+    { path: '/addproject', component: ckedit },
 
 
 ]

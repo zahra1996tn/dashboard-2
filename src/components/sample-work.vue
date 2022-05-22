@@ -9,12 +9,6 @@
               <li class="breadcrumb-item">
                 <h4 class="page-title">نمونه کارها</h4>
               </li>
-              <li class="breadcrumb-item bcrumb-1">
-                <a href="#">
-                  <i class="fa fa-home"></i>
-                  خانه
-                </a>
-              </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> نمونه کارها </a>
               </li>
@@ -289,18 +283,20 @@
 export default {
   methods: {
     web() {
-      if (this.$refs.web.classList.contains('active')) {
-         this.$refs.imgweb2.classList.add("catimg");
-      }
-      
-       else if (this.$refs.app.classList.contains("active")) {
-        this.$refs.imgweb3.classList.add("catimg");
-        this.$refs.webportfolio3.classList.add("boxcatimg");
-      }
-     },
+      this.$refs.imgweb2.classList.add("catimg");
+      this.$refs.imgweb4.classList.add("catimg");
+      this.$refs.imgweb3.classList.remove("catimg");
+      this.$refs.webportfolio3.classList.remove("boxcatimg");
+    },
+    app() {
+      this.$refs.imgweb2.classList.remove("catimg");
+      this.$refs.imgweb4.classList.remove("catimg");
+      this.$refs.webportfolio2.classList.remove("boxcatimg");
+      this.$refs.imgweb3.classList.add("catimg");
+      this.$refs.webportfolio3.classList.add("boxcatimg");
+    },
   },
 };
-
 </script>
 
 <style>

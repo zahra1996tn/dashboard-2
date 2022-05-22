@@ -7,13 +7,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <ul class="breadcrumb breadcrumb-style">
               <li class="breadcrumb-item">
-                <h4 class="page-title">محصولات</h4>
-              </li>
-              <li class="breadcrumb-item bcrumb-1">
-                <a href="#">
-                  <i class="fa fa-home"></i>
-                  خانه
-                </a>
+                <h4 class="page-title">پروفایل</h4>
               </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> پروفایل </a>
@@ -419,7 +413,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+ 
+};
 </script>
 
 <style>

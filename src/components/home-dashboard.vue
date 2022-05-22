@@ -1,6 +1,6 @@
 <template>
-  <section class="content">
-    <div class="container-fluid">
+  <section class="content" :class="themebdy">
+    <div class="container-fluid" :class="themebdy">
       <!-- start breadcrumb -->
       <div class="block-header">
         <div class="row">
@@ -11,9 +11,9 @@
               </li>
               <li class="breadcrumb-item bcrumb-1">
                 <a href="#">
-                  <i class="fa fa-home"></i>
                   خانه
                 </a>
+                
               </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> داشبورد </a>
@@ -26,66 +26,119 @@
       <!-- start chart 1 -->
       <div class="row">
         <div class="col-lg-3 col-md-6">
-          <bannercard :title="title1" :number="num1" :bnr="bnr1" :clr="clr1"/>
+  <div class="banner-card total-card">
+    <div class="chartjs-size-monitor">
+      <div class="chartjs-size-monitor-shrink"></div>
+    </div>
+    <div class="card-block">
+      <div class="text-center p-t-20">
+        <h4 class="titl-chrt"> مجموع فروش </h4>
+        <p class="m-0">4000</p>
+      </div>
+    </div>
+    <area-chart
+      :id='bnr'
+      :colors="['#fd7e14']"
+      class="chartjs-render-monitor mylinechart"
+      :data="{
+        '2010': 28,
+        '2011': 35,
+        '2012': 36,
+        '2013': 48,
+        '2014': 46,
+        '2015': 42,
+        '2016': 60,
+      }"
+    ></area-chart>
+  </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <bannercard :title="title2" :number="num2" :bnr="bnr2" :clr="clr2" />
+  <div class="banner-card total-card">
+    <div class="chartjs-size-monitor">
+      <div class="chartjs-size-monitor-shrink"></div>
+    </div>
+    <div class="card-block">
+      <div class="text-center p-t-20">
+        <h4 class="titl-chrt"> بازدیدکنندگان </h4>
+        <p class="m-0">2180</p>
+      </div>
+    </div>
+    <area-chart
+      :id='bnr'
+      :colors="['#007bff']"
+      class="chartjs-render-monitor mylinechart"
+      :data="{
+        '2010': 28,
+        '2011': 35,
+        '2012': 36,
+        '2013': 48,
+        '2014': 46,
+        '2015': 42,
+        '2016': 60,
+      }"
+    ></area-chart>
+  </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <bannercard :title="title3" :number="num3" :bnr="bnr3" :clr="clr3" />
+  <div class="banner-card total-card">
+    <div class="chartjs-size-monitor">
+      <div class="chartjs-size-monitor-shrink"></div>
+    </div>
+    <div class="card-block">
+      <div class="text-center p-t-20">
+        <h4 class="titl-chrt"> سفارشات </h4>
+        <p class="m-0">1256</p>
+      </div>
+    </div>
+    <area-chart
+      :id='bnr'
+      :colors="['#6f42c1']"
+      class="chartjs-render-monitor mylinechart"
+      :data="{
+        '2010': 28,
+        '2011': 35,
+        '2012': 36,
+        '2013': 48,
+        '2014': 46,
+        '2015': 42,
+        '2016': 60,
+      }"
+    ></area-chart>
+  </div>
         </div>
         <div class="col-lg-3 col-md-6">
-          <bannercard :title="title4" :number="num4" :bnr="bnr4" :clr="clr4" />
+  <div class="banner-card total-card">
+    <div class="chartjs-size-monitor">
+      <div class="chartjs-size-monitor-shrink"></div>
+    </div>
+    <div class="card-block">
+      <div class="text-center p-t-20">
+        <h4 class="titl-chrt"> سود </h4>
+        <p class="m-0">2168</p>
+      </div>
+    </div>
+    <area-chart
+      :id='bnr'
+      :colors="['#20c997']"
+      class="chartjs-render-monitor mylinechart"
+      :data="{
+        '2010': 28,
+        '2011': 35,
+        '2012': 36,
+        '2013': 48,
+        '2014': 46,
+        '2015': 42,
+        '2016': 60,
+      }"
+    ></area-chart>
+  </div>
         </div>
       </div>
       <!-- end chart 1 -->
       <div class="row clearfix">
         <!-- start line chart -->
         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-          <div class="card">
-            <div class="header">
-              <h5>
-                <strong> نمودار </strong>
-                میانگین
-              </h5>
-              <ul class="header-dropdown dropdown">
-                <li class="dropdown">
-                  <a
-                    href="#"
-                    class=""
-                    role="button"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-ellipsis-v"></i>
-                  </a>
-                  <ul
-                    class="pull-right dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <li class="dropdown-item">
-                      <a href="#"> اقدام </a>
-                    </li>
-                    <li class="dropdown-item">
-                      <a href="#"> اقدامی دیگر </a>
-                    </li>
-                    <li class="dropdown-item">
-                      <a href="#"> چیز دیگری اینجا </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="body">
-              <div class="chartsh">
-                <div class="box-chartsh">
-                  <line-chart class="linechart" :data="data" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <linechart class="" />
         </div>
         <!-- end line chart  -->
         <!-- start progress  -->
@@ -630,46 +683,16 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import bannercard from './Home/banner-card.vue'
+import Linechart from './Home-page/Line-chart.vue';
 export default {
-  components: {bannercard},
-  data() {
-    return {
-data : [
-  {
-    name: 'Workout',
-     data: {'2001':2 , '2002': 0 , '2003':2 , '2004':5 , '2005':3 ,'2006':2 , '2007':0}
-    },
-  {
-    name: 'Call parents',
-     data: {'2001':8 , '2002': 7 , '2003':15 , '2004':13 , '2005':3 ,'2006':2 , '2007':0}
-    }
-]
-    };
-  },
-  setup(){
-    const title1 = ref('مجموع فروش')
-    const num1 = ref('4000')
-    const bnr1 = ref('banner-chart1')
-    const clr1 = ref('#fd7e14')
-    const title2 = ref('بازدیدکنندگان')
-    const num2 = ref('2560')
-    const bnr2 = ref('banner-chart2')
-    const clr2 = ref('#17a2b8')
-    const title3 = ref('سفارشات')
-    const num3 = ref('3026')
-    const bnr3 = ref('banner-chart3')
-    const clr3 = ref('#6f42c1')
-    const title4 = ref('سود')
-    const num4 = ref('3598')
-    const bnr4 = ref('banner-chart4')
-    const clr4 = ref('#20c997')
+  components: {Linechart},
+  data(){
     return{
-      title1 , num1 , title2 , num2 , title3 , num3 , bnr1 , bnr2 , title4 ,
-      num4 , bnr4 , bnr3 , clr1 , clr2 , clr3 , clr4
+      themebdy : 'lightbody'
     }
-  }
+  },
+  
+ 
 };
 </script>
 

@@ -9,12 +9,6 @@
               <li class="breadcrumb-item">
                 <h4 class="page-title">مدیریت تگ</h4>
               </li>
-              <li class="breadcrumb-item bcrumb-1">
-                <a href="#">
-                  <i class="fa fa-home"></i>
-                  خانه
-                </a>
-              </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> مدیریت محتوا </a>
               </li>
@@ -47,38 +41,40 @@
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-12 col-sm-12">
-                <section>              
-              <div class="card">
-                <div class="header top-head-pro">
-                  <h6 class="text-center"> مدیریت تگ ها </h6>
-                  <img src="../assets/images/usrbig.jpg" alt="">
-                </div>
-                <div class="body">
-                  <form class="add-project">
-                    <div class="form-group">
-                      <input
-                        type="number"
-                        placeholder="شماره"
-                        class="form-control in1"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        placeholder="عنوان"
-                        class="form-control in2"
-                      />
-                    </div>
-                    <button class="btn btn-info btn-save-change">
-                     افزودن
+              <section>
+                <div class="card">
+                  <div class="header top-head-pro">
+                    <h6 class="text-center">مدیریت تگ ها</h6>
+                    <img src="../assets/images/usrbig.jpg" alt="" />
+                  </div>
+                  <div class="body">
+                    <form class="add-project" @submit.prevent="checktag">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          placeholder="عنوان"
+                          class="form-control in2"
+                          v-model="tag"
+                        />
+                        <p class="errtagg" v-if="errorstag.length">
+                            <ul>
+                              <li v-for="error in errorstag" :key="error">{{ error }}</li>
+                            </ul>
+                          </p>
+                      </div>
+                    <button
+                      class="btn btn-info btn-save-change"
+                      @click="addtodo"
+                      type="submit"
+                    >
+                      افزودن
                     </button>
-                  </form>
+                    </form>
+                  </div>
                 </div>
-              </div>
-
               </section>
             </div>
-              
+
             <div class="col-lg-8 col-md-12 col-sm-12">
               <div class="card">
                 <div class="body">
@@ -89,18 +85,10 @@
                           <tbody>
                             <tr role="row">
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="1"
-                                />
+                                1
                               </td>
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="داشبورد"
-                                />
+                                تگ 1
                               </td>
                               <td class="center">
                                 <a href="#" class="btn btn-tbl-delete">
@@ -110,18 +98,10 @@
                             </tr>
                             <tr role="row">
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="2"
-                                />
+                                2
                               </td>
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="تبدیل ارز"
-                                />
+                                تگ 2
                               </td>
                               <td class="center">
                                 <a href="#" class="btn btn-tbl-delete">
@@ -131,24 +111,28 @@
                             </tr>
                             <tr role="row">
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="3"
-                                />
+                                3
                               </td>
                               <td class="center">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  placeholder="وضعیت اب و هوا"
-                                />
+                                تگ 3
                               </td>
                               <td class="center">
                                 <a href="#" class="btn btn-tbl-delete">
                                   <i class="fa fa-trash"></i>
                                 </a>
                               </td>
+                            </tr>
+                            <tr
+                              class="row rowtag"
+                              v-for="(item, index) in items"
+                              :key="index"
+                            >
+                              <td class="center">{{ index+1 }}</td>
+                              <td class="center">{{ item }}</td>
+                              <td class="center">
+                                <a @click="removetodo(index)" href="#" class="btn btn-tbl-delete">
+                                <i class="fa fa-trash"> </i>
+                                </a></td>
                             </tr>
                           </tbody>
                         </table>
@@ -166,8 +150,77 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      items: [],
+      tag: "",
+      active: false,
+      errorstag: [],
+    };
+  },
+  methods: {
+    addtodo() {
+      if (this.tag == "") {
+        this.errorstag.push("عنوان تگ را وارد کنید");
+      } else if (this.tag.length < 5 || this.tag.length > 15) {
+        this.errorstag.push("عنوان تگ باید بیشتر از 5 کاراکتر باشد");
+      } else {
+        this.errorstag = [];
+        this.items.push(this.tag);
+        this.tag = "";
+        this.active = true;
+      }
+    },
+    removetodo(index) {
+      this.items.splice(index, 1);
+    },
+    // checktag(){
+    //   this.errorstag = []
+    //    if (!this.tag) {
+    //     this.errorstag.push("عنوان تگ را وارد کنید");
+    //   }
+    //   else if (/[A-Z]/.g.test(this.tag) == false) {
+    //     this.errorstag.push("عنوان باید رشته باشد");
+    //   }
+    //    else if (this.tag.length < 5 || this.tag.length > 15) {
+    //     this.errorstag.push("عنوان تگ باید بیشتر از 5 کاراکتر باشد");
+    //   }
+
+    // }
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.row {
+  margin: 15px 0 !important;
+}
+
+.mail {
+  position: relative;
+  margin-bottom: 15px;
+}
+.mail input {
+  height: 40px;
+  width: 100%;
+  border: solid 1px #999;
+  border-radius: 20px;
+  padding-right: 10px;
+}
+.mail label {
+  position: absolute;
+  top: -7px;
+  font-size: 12px;
+  white-space: nowrap;
+  background: #fff;
+  text-align: right;
+  right: 15px;
+  padding: 0 5px;
+  color: #999;
+  pointer-events: none;
+}
+.errtagg {
+  color: red;
+}
 </style>

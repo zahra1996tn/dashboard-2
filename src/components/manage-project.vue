@@ -9,12 +9,6 @@
               <li class="breadcrumb-item">
                 <h4 class="page-title">مدیریت پروژه</h4>
               </li>
-              <li class="breadcrumb-item bcrumb-1">
-                <a href="#">
-                  <i class="fa fa-home"></i>
-                  خانه
-                </a>
-              </li>
               <li class="breadcrumb-item bcrumb-2">
                 <a href="#"> مدیریت محتوا </a>
               </li>
@@ -46,7 +40,7 @@
             </button>
           </div>
           <div class="row">
-            <div class="col-lg-4 col-md-12 col-sm-12">
+            <!-- <div class="col-lg-4 col-md-12 col-sm-12">
                 <section>              
               <div class="card">
                 <div class="header top-head-pro">
@@ -57,40 +51,22 @@
                   <form class="add-project">
                     <div class="form-group">
                       <input
-                        type="number"
-                        placeholder="شماره"
-                        class="form-control in1"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <input
                         type="text"
                         placeholder="عنوان"
                         class="form-control in2"
+                        v-model="tag"
                       />
                     </div>
-                    <button class="btn btn-info btn-save-change">
-                      ایجاد پروژه
-                    </button>
                   </form>
+                  <router-link to="addproject">  <button class="btn btn-info btn-save-change" type="submit" >
+                      ایجاد پروژه
+                    </button></router-link>
                 </div>
               </div>
-
-              <!-- <div class="img-fix-mang">
-                <div class="box-img-fix-mng">
-                  <img
-                    src="../assets/images/post8.jpg"
-                    class="img-src-fix-mang"
-                  />
-                  <div class="hovered-img-src">
-                    <p>مدیریت پروژه ها</p>
-                  </div>
-                </div>
-              </div> -->
               </section>
-            </div>
+            </div> -->
               
-            <div class="col-lg-8 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card">
                 <div class="body">
                   <div class="table-responsive">
@@ -100,18 +76,10 @@
                           <tbody>
                             <tr role="row">
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="1"
-                                />
+                                1
                               </td>
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="داشبورد"
-                                />
+                                داشبورد
                               </td>
                               <td class="center">
                                 <a href="#" class="btn btn-tbl-edit">
@@ -124,18 +92,10 @@
                             </tr>
                             <tr role="row">
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="2"
-                                />
+                                2
                               </td>
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="تبدیل ارز"
-                                />
+                                تبدیل ارز
                               </td>
                               <td class="center">
                                 <a href="#" class="btn btn-tbl-edit">
@@ -148,18 +108,10 @@
                             </tr>
                             <tr role="row">
                               <td class="center">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  placeholder="3"
-                                />
+                                3
                               </td>
                               <td class="center">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  placeholder="وضعیت اب و هوا"
-                                />
+                                وضعیت اب و هوا
                               </td>
                               <td class="center">
                                 <a href="#" class="btn btn-tbl-edit">
@@ -169,9 +121,28 @@
                                   <i class="fa fa-trash"></i>
                                 </a>
                               </td>
+                            </tr>
+                            <tr
+                              class="row"
+                              v-for="(item, index) in items2"
+                              :key="index"
+                            >
+                              <td class="center">{{ index+1 }}</td>
+                              <td class="center">{{ item }}</td>
+                              <td class="center">
+                                <a href="#" class="btn btn-tbl-edit">
+                                  <i class="fa fa-pencil"></i>
+                                </a>
+                                <a @click="removetodo(index)" href="#" class="btn btn-tbl-delete">
+                                <i class="fa fa-trash"> </i>
+                                </a>
+                                </td>
                             </tr>
                           </tbody>
                         </table>
+                  <router-link to="addproject">  <button class="btn btn-info btn-save-change" type="submit" >
+                      ایجاد پروژه
+                    </button></router-link>
                       </form>
                     </div>
                   </div>
@@ -186,8 +157,33 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+    return {
+      items2: [],
+      tag: "",
+    };
+  },
+  methods: {
+    addtodopro() {
+      if (this.tag == "") {
+        alert("enter value!");
+      } else {
+        this.items2.push(this.tag);
+        this.tag = "";
+      }
+    },
+    removetodo(index){
+      this.items2.splice(index, 1);
+    }
+  }
+
+};
 </script>
 
-<style>
+<style scoped>
+.row{
+  margin:15px 0 !important;
+}
+
 </style>
